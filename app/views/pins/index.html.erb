@@ -29,6 +29,13 @@
 </table>
 
 <br>
+
 <% if user_signed_in? %>
   <%= link_to 'New Pin', new_pin_path %>
 <% end %>
+
+<br>
+
+<div class="center">
+  <%= will_paginate @pins, renderer: BootstrapPagination::Rails %>
+</div>
