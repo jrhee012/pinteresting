@@ -1,6 +1,8 @@
 class Pin < ApplicationRecord
   validates :image, presence: true
   validates :description, presence: true
+  
+  # change this for security
   do_not_validate_attachment_file_type :image
 
   belongs_to :user
