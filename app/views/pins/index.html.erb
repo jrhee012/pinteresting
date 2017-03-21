@@ -3,11 +3,13 @@
     <div class="box panel panel-default">
       <%= image_tag pin.image.url(:medium) %>
       <div class="panel-body">
-        <%= pin.description %>
-        <%= pin.user.name if pin.user %>
         <%= link_to pin_path(pin) do %>
-          <span class="glyphicon glyphicon-search"></span>
+          <%= pin.description %>
         <% end %>
+        <% if pin.user.name != nil %>
+          |
+        <% end %>
+        <%= pin.user.name if pin.user %>
         <% if pin.user == current_user %>
           <%= link_to edit_pin_path(pin) do %>
             <span class="glyphicon glyphicon-edit"></span>
